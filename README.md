@@ -22,5 +22,3 @@ npm start
 ./scripts/dev.sh
 ```
 # todo_list_angular
-# todo-list_Angular
-# todo-list_Angular
