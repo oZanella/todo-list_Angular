@@ -10,7 +10,7 @@ import { CategoryService } from '../../service/category.service';
       <span class="text-2xl font-semibold">Categorias</span>
 
       <ul class="mt-4 space-y-3">
-        @for (category of categories$(); track category.id) {
+        @for (category of categories(); track category.id) {
           <li class="text-xl font-medium">
             {{ category.name }}
           </li>
@@ -23,5 +23,5 @@ import { CategoryService } from '../../service/category.service';
 export class MainListComponent {
   private readonly CategoryService = inject(CategoryService);
 
-  public categories$ = this.CategoryService.categories;
+  public categories = this.CategoryService.categories;
 }

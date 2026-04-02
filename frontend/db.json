@@ -19,12 +19,12 @@
     {
       "id": "4",
       "name": "Pessoal",
-      "color": "red"
+      "color": "purple"
     },
     {
       "id": "5",
       "name": "Saúde",
-      "color": "purple"
+      "color": "red"
     }
   ]
 }
