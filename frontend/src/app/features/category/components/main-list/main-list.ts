@@ -1,10 +1,27 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { CategoryService } from '../../service/category.service';
 
 @Component({
   selector: 'app-main-list',
   standalone: true,
   imports: [],
-  template: `<p>main-list works!</p>`,
+  template: `
+    <section class="mt-16 mx-12 pl-8">
+      <span class="text-2xl font-semibold">Categorias</span>
+
+      <ul class="mt-4 space-y-3">
+        @for (category of categories$(); track category.id) {
+          <li class="text-xl font-medium">
+            {{ category.name }}
+          </li>
+        }
+      </ul>
+    </section>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainListComponent {}
+export class MainListComponent {
+  private readonly CategoryService = inject(CategoryService);
+
+  public categories$ = this.CategoryService.categories;
+}
